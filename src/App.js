@@ -8,6 +8,7 @@ function App() {
   const [showEurope, setShowEurope] = useState(false);
   const [showAfrica, setShowAfrica] = useState(false);
   const [showAsia, setShowAsia] = useState(false);
+
   const [showInfo, setShowInfo] = useState(null);
 
   const showMoreInfo = (country) => {
