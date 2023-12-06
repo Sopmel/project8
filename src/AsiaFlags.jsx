@@ -27,7 +27,7 @@ const AsiaFlags = (props) => {
             onClick={() => props.showMoreInfo(country)} />
 
             {props.showInfo === country && (
-              <div style={{ backgroundColor: "beige", padding: "10px", margin: "20px", borderRadius: "10px"}}>
+              <div style={{ backgroundColor: "beige", padding: "5px", margin: "20px", borderRadius: "10px"}}>
                 <p>Country: {country.name.common}</p>
                 <p>Capital: {country.capital}</p>
                 <p>Population: {country.population}</p>
