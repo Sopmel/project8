@@ -1,11 +1,24 @@
+
 .App {
   text-align: center;
+  list-style: none;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
+
+button {
+  margin: 20px;
+  padding: 5px;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

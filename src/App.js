@@ -1,23 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import EuropeFlags from "./EuropeFlags";
+import AfricaFlags from "./AfricaFlags";
+import AsiaFlags from "./AsiaFlags";
 
 function App() {
+  const [showEurope, setShowEurope] = useState(false);
+  const [showAfrica, setShowAfrica] = useState(false);
+  const [showAsia, setShowAsia] = useState(false);
+  const [showInfo, setShowInfo] = useState(null);
+
+  const showMoreInfo = (country) => {
+    setShowInfo(showInfo === country ? null : country);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Världens Flaggor</h1>
+      <p>Välj en världsdel för att se flaggor</p>
+
+      <button
+        onClick={() => {
+          setShowEurope(!showEurope);
+        }}
+      >
+        Europe
+      </button>
+
+      <button
+        onClick={() => {
+          setShowAfrica(!showAfrica);
+        }}
+      >
+        Africa
+      </button>
+
+      <button
+        onClick={() => {
+          setShowAsia(!showAsia);
+        }}
+      >
+        Asia
+      </button>
+
+      {showEurope && (
+        <EuropeFlags
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+          showMoreInfo={showMoreInfo}
+        />
+      )}
+      {showAfrica && (
+        <AfricaFlags
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+          showMoreInfo={showMoreInfo}
+        />
+      )}
+
+      {showAsia && (
+        <AsiaFlags
+          showInfo={showInfo}
+          setShowInfo={setShowInfo}
+          showMoreInfo={showMoreInfo}
+        />
+      )}
     </div>
   );
 }
